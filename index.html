@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harshiv Gajjar - Portfolio</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <link rel="icon" type="image/x-icon" href="../media/vscode_icon.svg">
+
+</head>
+<body>
+    <div class="container-fluid custom-main-nav-div py-2">
+        <div class="row align-items-center">
+            <div class="col-auto">
+                <img src="../media/vscode_icon.svg" alt="VScode Logo" style="width: 15px; height: 15px;">
+            </div>
+            <div class="col-auto top-nav-div-links" id="links">
+                <a href="#" class="me-3">File</a>
+                <a href="#" class="me-3">Edit</a>
+                <a href="#" class="me-3">Selection</a>
+                <a href="#" class="me-3">View</a>
+                <a href="#" class="me-3">Go</a>
+                <a href="#" class="me-3">Run</a>
+                <a href="#" class="me-3">Terminal</a>
+                <a href="#" class="me-3">Help</a>
+            </div>
+            <div class="col text-center top-nav-div-name">
+                Harshiv Gajjar - Visual Studio Code
+            </div>
+            <div class="col-auto">
+                <i class="fas fa-adjust theme-toggle" onclick="toggleTheme()"></i>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-auto side-nav">
+                <a href="#nav-home" class="py-4 text-center" onclick="toggleTab('nav-home')"><i class="fas fa-user"></i></a>
+                <a href="#nav-about" class="py-4 text-center" onclick="toggleTab('nav-about')"><i class="fas fa-code"></i></a>
+                <a href="#nav-projects" class="py-4 text-center" onclick="toggleTab('nav-projects')"><i class="fas fa-project-diagram"></i></a>
+                <a href="#nav-contact" class="py-4 text-center" onclick="toggleTab('nav-contact')"><i class="fas fa-envelope"></i></a>
+            </div>
+            <div class="col-auto p-0 explorer" style="width: 200px;">
+                <div class="p-3">
+                    <h6 class="mb-3">EXPLORER</h6>
+                    <div id="portfolioDropdown" onclick="portfolioDrop()">
+                        <i class="fas fa-chevron-right me-2"></i>PORTFOLIO
+                    </div>
+                    <div id="vertical-nav" style="display: none;">
+                        <a href="#nav-home" class="explorer-links d-block py-2" onclick="toggleTab('nav-home')">
+                            <img src="../media/html_icon.svg" class="explorer_icon">home.html</a>
+                        <a href="#nav-about" class="explorer-links d-block py-2" onclick="toggleTab('nav-about')">
+                            <img src="../media/css_icon.svg" class="explorer_icon">about.css</a>
+                        <a href="#nav-projects" class="explorer-links d-block py-2" onclick="toggleTab('nav-projects')">
+                            <img src="../media/js_icon.svg" class="explorer_icon">projects.js</a>
+                        <a href="#nav-contact" class="explorer-links d-block py-2" onclick="toggleTab('nav-contact')">
+                            <img src="../media/json_icon.svg" class="explorer_icon">contact.json</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col main-content p-0">
+                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">
+                            <i class="fas fa-home me-2"></i>home.html
+                        </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="nav-about-tab" data-bs-toggle="tab" data-bs-target="#nav-about" type="button" role="tab" aria-controls="nav-about" aria-selected="false">
+                            <i class="fas fa-user me-2"></i>about.css
+                        </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="nav-projects-tab" data-bs-toggle="tab" data-bs-target="#nav-projects" type="button" role="tab" aria-controls="nav-projects" aria-selected="false">
+                            <i class="fas fa-code me-2"></i>projects.js
+                        </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button" role="tab" aria-controls="nav-contact" aria-selected="false">
+                            <i class="fas fa-envelope me-2"></i>contact.json
+                        </button>
+                    </li>
+                </ul>
+                <div class="tab-content" id="nav-tabContent">
+                    <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                        <div class="container py-5">
+                            <h1 class="display-4 mb-4" id="typing-title"></h1>
+                            <p class="lead" id="typing-content"></p>
+                            <a href="#nav-about" class="btn btn-primary mt-3" onclick="toggleTab('nav-about')">Learn More About Me</a>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="nav-about" role="tabpanel" aria-labelledby="nav-about-tab">
+                        <div class="container py-5">
+                            <h2 class="mb-4">About Me</h2>
+                            <p>
+                                Hi, I'm Harshiv Gajjar — a Computer Science student at Toronto Metropolitan University with a strong foundation in programming, data analysis, and web development. I’m currently pursuing a minor in Mathematics and am passionate about blending technical knowledge with creativity.<br><br>
+
+                                Previously, I studied at Fergusson College in India, where I co-authored a published research paper on weather prediction using Raspberry Pi and the ARIMA model — combining hardware, data science, and real-world problem solving.<br><br>
+                                
+                                Beyond code, I’m a performing card magician (@harshivfools), and someone who’s deeply passionate about sports, animals, and learning new things. I’ve won awards for ethical hacking at IIT Bombay, and I currently work as a note taker at HabitatLearn, helping students access inclusive and high-quality academic content.<br><br>
+                                
+                                Whether I’m building a web app, analyzing algorithms, or captivating an audience with a deck of cards, I’m always driven by curiosity, empathy, and a desire to create meaningful experiences.<br><br>
+                                
+                                Let’s connect and make something unforgettable.<br>
+                            </p>
+                            <h3 class="mt-4 mb-3">Programming Languages</h3>
+                            <ul>
+                                <li>HTML, CSS, JavaScript, PHP</li>
+                                <li>Python, Java, C</li>
+                                <li>SQL</li>
+                                <li>Prolog</li>
+                            </ul>
+                            <h3 class="mt-4 mb-3">Hardware</h3>
+                            <ul>
+                                <li>Raspberry Pi</li>
+                                <li>Arduino UNO</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="nav-projects" role="tabpanel" aria-labelledby="nav-projects-tab">
+                        <div class="container py-5">
+                            <h2 class="mb-4">My Projects</h2>
+                            <div class="row">
+                                <div class="col-md-6 mb-4">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Project 1</h5>
+                                            <p class="card-text">A responsive web application built with React and Node.js.</p>
+                                            <a href="#" class="btn btn-primary">View Project</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mb-4">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Project 2</h5>
+                                            <p class="card-text">An e-commerce platform developed using Django and PostgreSQL.</p>
+                                            <a href="#" class="btn btn-primary">View Project</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
+                        <div class="container py-5">
+                            <h2 class="mb-4">Contact Me</h2>
+                            <pre id="contact-json"></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
